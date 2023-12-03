@@ -12,9 +12,12 @@ flask-migrate = "*"
 python-dotenv = "*"
 flask-cors = "*"
 psycopg2 = "*"
-gunicorn = "*"
+waitress = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.7"
+python_version = "3.12"
+
+[scripts]
+start = "waitress-serve --call \"backend:create_app\""
