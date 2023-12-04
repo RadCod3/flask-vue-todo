@@ -6,9 +6,12 @@ ENV LC_ALL C.UTF-8
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONFAULTHANDLER 1
 
-RUN useradd -u 10001 --create-home appuser
-WORKDIR /home/appuser
-USER appuser
+RUN groupadd -g 10001 flaskapp && \
+   useradd -u 10000 --create-home -g flaskapp flaskapp \
+   && chown -R flaskapp:flaskapp /app
+
+WORKDIR /home/flaskapp
+USER flaskapp
 
 # Install pipenv and compilation dependencies
 RUN pip install pipenv
