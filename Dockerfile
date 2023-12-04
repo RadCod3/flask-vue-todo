@@ -25,7 +25,7 @@ COPY --from=python-deps /.venv /.venv
 ENV PATH="/.venv/bin:$PATH"
 
 # Create and switch to a new user
-RUN useradd --create-home appuser
+RUN -u 10001 useradd --create-home appuser
 WORKDIR /home/appuser
 USER appuser
 
