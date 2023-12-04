@@ -1,1 +1,1 @@
-web: flask db upgrade && gunicorn --access-logfile - --error-logfile - -w 4 "backend:create_app()"
+web: flask db upgrade && waitress-serve --call "backend:create_app"
