@@ -1,0 +1,8 @@
+apiVersion: core.choreo.dev/v1alpha1
+kind: ComponentConfig
+metadata:
+  name: flask-todo
+  projectName: flask-todo
+  annotations:
+    componentType: web-app
+spec: {}
