@@ -7,8 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONFAULTHANDLER 1
 
 RUN groupadd -g 10001 flaskapp && \
-   useradd -u 10001 --create-home -g flaskapp flaskapp \
-   && chown -R flaskapp:flaskapp /app
+   useradd -u 10001 --create-home -g flaskapp flaskapp 
 
 WORKDIR /home/flaskapp
 USER flaskapp
