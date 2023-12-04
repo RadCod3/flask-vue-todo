@@ -5,5 +5,4 @@ flask-login
 flask-migrate
 python-dotenv
 flask-cors
-psycopg2
 waitress
